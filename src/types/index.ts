@@ -25,6 +25,7 @@ export interface SportRoute {
   finishedAt?: string; // ISO date
   route_points?: RoutePoint[]; // related table
   points?: RoutePoint[];
+  photos?: string[];
 }
 
 export interface User {

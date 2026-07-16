@@ -25,8 +25,8 @@ export default function RouteCard({ route }: { route: SportRoute }) {
   const points = route.route_points || route.points || [];
   
   // Basic check for video by extension
-  const videos = (route.photos || []).filter(uri => uri.toLowerCase().endsWith('.mp4') || uri.toLowerCase().endsWith('.mov'));
-  const photos = (route.photos || []).filter(uri => !uri.toLowerCase().endsWith('.mp4') && !uri.toLowerCase().endsWith('.mov'));
+  const videos = (route.photos || []).filter((uri: string) => uri.toLowerCase().endsWith('.mp4') || uri.toLowerCase().endsWith('.mov'));
+  const photos = (route.photos || []).filter((uri: string) => !uri.toLowerCase().endsWith('.mp4') && !uri.toLowerCase().endsWith('.mov'));
 
   return (
     <View style={styles.card}>
@@ -68,7 +68,7 @@ export default function RouteCard({ route }: { route: SportRoute }) {
         )}
 
         {/* VIDEOS */}
-        {videos.map((uri, i) => (
+        {videos.map((uri: string, i: number) => (
           <Video
             key={`vid-${i}`}
             source={{ uri }}
@@ -82,7 +82,7 @@ export default function RouteCard({ route }: { route: SportRoute }) {
         {/* FOTOS */}
         {photos.length > 0 && (
           <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.photosScroll}>
-            {photos.map((uri, i) => (
+            {photos.map((uri: string, i: number) => (
               <Image key={`img-${i}`} source={{ uri }} style={styles.photo} />
             ))}
           </ScrollView>
