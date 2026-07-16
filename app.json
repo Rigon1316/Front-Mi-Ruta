@@ -1,0 +1,60 @@
+{
+  "expo": {
+    "name": "Sport Tracker",
+    "slug": "sport-tracker-app",
+    "scheme": "sporttracker",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.richard.sporttracker",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Necesitamos tu ubicación para trazar la ruta de tu actividad.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Necesitamos tu ubicación en segundo plano para seguir registrando la ruta.",
+        "NSCameraUsageDescription": "Necesitamos la cámara para adjuntar fotos a tus rutas.",
+        "NSPhotoLibraryUsageDescription": "Necesitamos acceso a tus fotos para adjuntarlas a tus rutas."
+      }
+    },
+    "android": {
+      "package": "com.richard.sporttracker",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#2f6fed"
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA",
+        "POST_NOTIFICATIONS"
+      ]
+    },
+    "plugins": [
+      "expo-router",
+      "expo-location",
+      "expo-camera",
+      "expo-notifications",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "La app usa tus fotos para adjuntarlas a las rutas."
+        }
+      ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      }
+    }
+  }
+}
